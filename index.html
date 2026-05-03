@@ -81,13 +81,8 @@ body, html {
     .glow-orb { filter: blur(120px); }
 }
 
-.orb-1 { top: -10%; right: -5%; width: 250px; height: 250px; background: var(--accent); }
-.orb-2 { bottom: -10%; left: -5%; width: 200px; height: 200px; background: var(--emerald); }
-
-@media (min-width: 768px) {
-    .orb-1 { width: 700px; height: 700px; }
-    .orb-2 { width: 600px; height: 600px; }
-}
+.orb-1 { top: -10%; right: -5%; width: 700px; height: 700px; background: var(--accent); }
+.orb-2 { bottom: -10%; left: -5%; width: 600px; height: 600px; background: var(--emerald); }
 
 @keyframes pulse {
     0% { transform: scale(1); opacity: 0.15; }
@@ -620,7 +615,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                     const data = await response.json();
                     
                     if (!response.ok) {
-                        return `Hata: ${response.status}. ${data.error?.message || "İstek reddedildi."}`;
+                        return `Teknik Hata: ${response.status}. ${data.error?.message || "Bağlantı reddedildi."}`;
                     }
                     
                     return data.candidates?.[0]?.content?.parts?.[0]?.text || "Yanıt alınamadı.";
