@@ -271,7 +271,7 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
 .bubble-ai { background: rgba(66, 133, 244, 0.1); border: 1px solid rgba(66, 133, 244, 0.2); align-self: flex-start; color: var(--slate-400); }
 
 .ai-input-area { display: flex; gap: 8px; margin-top: auto; }
-.ai-input { flex: 1; background: #161b22; border: 1px solid #30363d; padding: 10px; border-radius: 10px; color: white; font-size: 16px; outline: none; }
+.ai-input { flex: 1; background: #161b22; border: 1px solid #30363d; padding: 12px; border-radius: 10px; color: white; font-size: 16px; outline: none; }
 
 .loading-dots:after { content: '...'; animation: dots 1.5s infinite; }
 @keyframes dots { 0% { content: '.'; } 33% { content: '..'; } 66% { content: '...'; } }
@@ -595,8 +595,8 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
         function clearHistory() { chatHistory = []; document.getElementById('aiHistory').innerHTML = '<div class="chat-bubble bubble-ai">Geçmiş temizlendi. Nasıl yardımcı olabilirim?</div>'; }
 
         async function callGeminiAPI(history, systemPrompt) {
-            // KRİTİK GÜNCELLEME: v1beta endpoint ve camelCase schema uyumu
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+            // KRİTİK GÜNCELLEME: v1beta endpoint ve en güncel Gemini modeli (gemini-2.5-flash-preview-09-2025)
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
             
             let delays = [1000, 2000, 4000, 8000];
             
@@ -615,7 +615,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                     const data = await response.json();
                     
                     if (!response.ok) {
-                        return `Teknik Hata: ${response.status}. ${data.error?.message || "Bağlantı reddedildi."}`;
+                        return `Hata: ${response.status}. ${data.error?.message || "İstek reddedildi."}`;
                     }
                     
                     return data.candidates?.[0]?.content?.parts?.[0]?.text || "Yanıt alınamadı.";
