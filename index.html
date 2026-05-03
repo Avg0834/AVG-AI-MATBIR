@@ -9,12 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Urbanist:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
-/* 1. ÇEKİRDEK TASARIM VE STABİLİZASYON */
+/* 1. ÇEKİRDEK TASARIM */
 :root {
     --primary: #020617;
     --accent: #4285F4;
     --emerald: #10b981;
-    --gold: #f59e0b;
     --white: #f8fafc;
     --slate-400: #94a3b8;
     --slate-800: #1e293b;
@@ -60,7 +59,7 @@ body, html {
     .slide { padding: 40px 80px; }
 }
 
-/* 3. ARKA PLAN ANİMASYONLARI */
+/* 3. ARKA PLAN */
 .hero-bg {
     position: absolute;
     width: 100%;
@@ -79,11 +78,6 @@ body, html {
 
 .orb-1 { top: -10%; right: -5%; width: 250px; height: 250px; background: var(--accent); }
 .orb-2 { bottom: -10%; left: -5%; width: 200px; height: 200px; background: var(--emerald); }
-
-@media (min-width: 768px) {
-    .orb-1 { width: 700px; height: 700px; }
-    .orb-2 { width: 600px; height: 600px; }
-}
 
 @keyframes pulse {
     0% { transform: scale(1); opacity: 0.15; }
@@ -111,7 +105,7 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
     -webkit-text-fill-color: transparent;
 }
 
-/* 5. IZGARA SİSTEMİ (RESPONSIVE) */
+/* 5. IZGARA SİSTEMİ */
 .content-grid {
     display: flex;
     flex-direction: column;
@@ -148,11 +142,6 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
 .card p { color: var(--slate-400); font-size: 13px; line-height: 1.5; }
 .card i { font-size: 22px; color: var(--accent); margin-bottom: 10px; display: block; }
 
-@media (min-width: 768px) {
-    .card h3 { font-size: 20px; }
-    .card p { font-size: 16px; }
-}
-
 /* 6. AVG AI İMZASI (SOL ALT) */
 .watermark-signature {
     position: fixed;
@@ -180,10 +169,6 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
     padding-left: 8px;
 }
 
-@media (min-width: 768px) {
-    .watermark-text { font-size: 18px; border-left-width: 3px; padding-left: 12px; }
-}
-
 /* 7. YAPAY ZEKA BUTON VE MODAL */
 .ai-ask-btn {
     background: linear-gradient(135deg, var(--accent), var(--emerald));
@@ -201,10 +186,6 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
     transition: all 0.3s ease;
     margin-top: 15px;
     white-space: nowrap;
-}
-
-@media (min-width: 768px) {
-    .ai-ask-btn { padding: 14px 32px; font-size: 16px; gap: 12px; }
 }
 
 .modal-overlay {
@@ -227,7 +208,6 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
     border-radius: 20px;
     padding: 15px;
     position: relative;
-    box-shadow: 0 0 30px rgba(66, 133, 244, 0.2);
     display: flex;
     flex-direction: column;
     height: 80vh;
@@ -263,7 +243,7 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
 .loading-dots:after { content: '...'; animation: dots 1.5s infinite; }
 @keyframes dots { 0% { content: '.'; } 33% { content: '..'; } 66% { content: '...'; } }
 
-/* 8. NAV DOTS */
+/* 8. NAVİGASYON NOKTALARI */
 .nav-dots {
     position: fixed;
     right: 10px;
@@ -290,7 +270,7 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
     border-radius: 5px;
 }
 
-/* 9. TABLE */
+/* 9. TABLO */
 .table-container { width: 100%; overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; margin-top: 5px; min-width: 450px; }
 th { text-align: left; padding: 10px; color: var(--accent); border-bottom: 2px solid var(--slate-800); font-family: 'Outfit'; font-size: 11px; }
@@ -349,7 +329,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                     <div class="card" style="border-left: 8px solid var(--accent);"><h3>Devasa Katılım Gücü</h3><p>Merkezden yapılan HD yayını on binlerce öğrenciye sıfır gecikme ile iletiyoruz.</p></div>
                     <div class="card"><h3>Otonom Arşivleme</h3><p>Dersler bittiği an manuel müdahale gerekmeden otomatik olarak kaydedilir.</p></div>
                 </div>
-                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('live_class')"><i class="fa-solid fa-sparkles"></i> CANLI DERS TEKNOLOJİSİ SOR</button>
+                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('live_class')"><i class="fa-solid fa-sparkles"></i> CANLI DERS TEKNOLOJİSİNİ SOR</button>
             </div>
         </section>
 
@@ -358,11 +338,8 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
             <h2 class="slide-title">Ads & Meta: <span>360° Sinerji</span></h2>
             <div class="content-grid">
                 <div class="grid-2">
-                    <div class="card"><i class="fa-brands fa-google" style="color: #4285F4;"></i><h3>Google Ads</h3><p>Yüksek niyetli velileri yakalıyor, kayıt potansiyeli en yüksek kitleyi anında sitemize çekiyoruz.</p></div>
-                    <div class="card"><i class="fa-brands fa-meta" style="color: #0668E1;"></i><h3>Meta (Retargeting)</h3><p>Marka güvenini perçinleyen görsel bir yolculuk sunuyoruz.</p></div>
-                </div>
-                <div class="card" style="padding: 12px; border-bottom: 4px solid var(--emerald);">
-                    <p style="margin-bottom: 0; font-weight: 700; color: var(--white); font-size: 13px;">Reklam maliyetlerini %30 optimize ediyoruz.</p>
+                    <div class="card"><i class="fa-brands fa-google" style="color: #4285F4;"></i><h3>Google Ads</h3><p>Kurs aramalarında velinin "niyetini" yakalıyor, kayıt potansiyeli en yüksek kitleyi anında çekiyoruz.</p></div>
+                    <div class="card"><i class="fa-brands fa-meta" style="color: #0668E1;"></i><h3>Meta (Retargeting)</h3><p>Google'dan gelen veliyi sosyal medyada takip ederek marka güvenini perçinliyoruz.</p></div>
                 </div>
                 <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('marketing')"><i class="fa-solid fa-sparkles"></i> REKLAM STRATEJİSİNİ SOR</button>
             </div>
@@ -422,7 +399,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
     <div class="modal-overlay" id="aiModal">
         <div class="modal-content">
             <span style="position: absolute; top: 10px; right: 15px; font-size: 24px; color: var(--slate-400); cursor: pointer; z-index: 10;" onclick="closeAI()"><i class="fa-solid fa-xmark"></i></span>
-            <h2 id="aiTitle" style="color: var(--accent); margin-bottom: 5px; font-family: 'Outfit'; font-size: 18px;">✨ Akıllı Altyapı Asistanı</h2>
+            <h2 id="aiTitle" style="color: var(--accent); margin-bottom: 5px; font-family: 'Outfit'; font-size: clamp(15px, 4vw, 20px);">✨ Akıllı Altyapı Asistanı</h2>
             <div id="aiHistory" class="ai-history">
                 <div class="chat-bubble bubble-ai">Merhaba! Ben Matbir 360° teknoloji danışmanıyım. Size nasıl yardımcı olabilirim?</div>
             </div>
@@ -438,7 +415,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
     </div>
 
     <script>
-        // --- API ANAHTARI ENTEGRASYONU ---
+        // --- YENİ API ANAHTARI ENTEGRASYONU ---
         const apiKey = "AIzaSyAlsRzfSe0abjgzQKSI0iEePu4nLGzL0Lc"; 
 
         let currentSlide = 0;
@@ -489,7 +466,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
         }
 
         function closeAI() { document.getElementById('aiModal').style.display = 'none'; }
-        function clearHistory() { chatHistory = []; document.getElementById('aiHistory').innerHTML = '<div class="chat-bubble bubble-ai">Geçmiş temizlendi.</div>'; }
+        function clearHistory() { chatHistory = []; document.getElementById('aiHistory').innerHTML = '<div class="chat-bubble bubble-ai">Geçmiş temizlendi. Nasıl yardımcı olabilirim?</div>'; }
 
         async function callGeminiAPI(history, systemPrompt) {
             // URL GÜNCELLEDİ: 1.5-flash (En stabil sürüm)
@@ -501,13 +478,22 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                     const response = await fetch(url, {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ contents: history, systemInstruction: { parts: [{ text: systemPrompt }] } })
+                        body: JSON.stringify({ 
+                            contents: history.map(h => ({ role: h.role, parts: h.parts })), 
+                            systemInstruction: { parts: [{ text: systemPrompt }] } 
+                        })
                     });
-                    if (!response.ok) throw new Error(response.status);
+
+                    if (response.status === 403) return "Hata (403): API anahtarınız henüz aktifleşmemiş veya kısıtlanmış olabilir. Lütfen 5-10 dk bekleyin veya Google AI Studio ayarlarını kontrol edin.";
+                    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                    
                     const data = await response.json();
-                    return data.candidates?.[0]?.content?.parts?.[0]?.text;
+                    const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                    if (!aiText) throw new Error('Yanıt boş döndü.');
+                    return aiText;
+
                 } catch (error) {
-                    if (i === delays.length - 1) return "Bağlantı kurulamadı. Lütfen internetinizi kontrol edin.";
+                    if (i === delays.length - 1) return `Bağlantı hatası: ${error.message}. Lütfen internetinizi kontrol edin.`;
                     await new Promise(r => setTimeout(r, delays[i]));
                 }
             }
@@ -519,17 +505,21 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
             const userText = input.value;
             input.value = "";
             const historyDiv = document.getElementById('aiHistory');
+            
             historyDiv.innerHTML += `<div class="chat-bubble bubble-user">${userText}</div>`;
             const loading = document.createElement('div');
             loading.className = 'chat-bubble bubble-ai loading-dots';
             loading.innerText = 'Düşünüyor';
             historyDiv.appendChild(loading);
             historyDiv.scrollTop = historyDiv.scrollHeight;
+
             chatHistory.push({ role: 'user', parts: [{ text: userText }] });
 
-            const systemPrompt = `Sen Matbir 360° Eğitim Ekosistemi danışmanısın. Profesyonel, vizyoner ve hizmet odaklı ol. Matbir'in teknolojik mülkiyetine ve 10.000+ kapasitesine vurgu yap. Yanıtların sonuna mutlaka: "--- Bu proje AVG AI tarafından hazırlanmıştır." ekle.`;
+            let systemPrompt = `Sen Matbir 360° Eğitim Ekosistemi projesinin resmi danışmanısın. Profesyonel, vizyoner ve hizmet odaklı bir dil kullan. Matbir'in teknolojik mülkiyetine ve 10.000+ kapasitesine vurgu yap. Yanıtların sonuna mutlaka: "--- Bu proje AVG AI tarafından hazırlanmıştır." ekle.`;
+
             const aiResponse = await callGeminiAPI(chatHistory, systemPrompt);
             loading.remove();
+            
             if (aiResponse) {
                 historyDiv.innerHTML += `<div class="chat-bubble bubble-ai">${aiResponse}</div>`;
                 chatHistory.push({ role: 'model', parts: [{ text: aiResponse }] });
