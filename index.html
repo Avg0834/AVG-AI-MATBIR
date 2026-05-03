@@ -81,8 +81,13 @@ body, html {
     .glow-orb { filter: blur(120px); }
 }
 
-.orb-1 { top: -10%; right: -5%; width: 700px; height: 700px; background: var(--accent); }
-.orb-2 { bottom: -10%; left: -5%; width: 600px; height: 600px; background: var(--emerald); }
+.orb-1 { top: -10%; right: -5%; width: 250px; height: 250px; background: var(--accent); }
+.orb-2 { bottom: -10%; left: -5%; width: 200px; height: 200px; background: var(--emerald); }
+
+@media (min-width: 768px) {
+    .orb-1 { width: 700px; height: 700px; }
+    .orb-2 { width: 600px; height: 600px; }
+}
 
 @keyframes pulse {
     0% { transform: scale(1); opacity: 0.15; }
@@ -102,10 +107,6 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
     width: 100%;
     max-width: 1100px;
     text-align: left;
-}
-
-@media (min-width: 768px) {
-    .slide-title { border-left-width: 10px; padding-left: 25px; margin-bottom: 30px; }
 }
 
 .slide-title span {
@@ -145,15 +146,6 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
     transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-}
-
-@media (min-width: 768px) {
-    .card { padding: 25px; border-radius: 24px; min-height: 160px; }
-}
-
-.card:hover {
-    border-color: var(--accent);
-    transform: translateY(-5px);
 }
 
 .card h3 { color: var(--accent); font-size: 16px; margin-bottom: 8px; }
@@ -213,7 +205,7 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
 }
 
 @media (min-width: 768px) {
-    .ai-ask-btn { padding: 14px 32px; font-size: 16px; gap: 12px; margin-top: 30px; }
+    .ai-ask-btn { padding: 14px 32px; font-size: 16px; gap: 12px; }
 }
 
 .modal-overlay {
@@ -230,7 +222,7 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
 
 .modal-content {
     background: #0d1117;
-    width: 100%;
+    width: 90%;
     max-width: 850px;
     border: 1px solid rgba(66, 133, 244, 0.3);
     border-radius: 20px;
@@ -240,10 +232,6 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
     display: flex;
     flex-direction: column;
     height: 80vh;
-}
-
-@media (min-width: 768px) {
-    .modal-content { border-radius: 32px; padding: 30px; height: 75vh; }
 }
 
 .ai-history {
@@ -271,7 +259,7 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
 .bubble-ai { background: rgba(66, 133, 244, 0.1); border: 1px solid rgba(66, 133, 244, 0.2); align-self: flex-start; color: var(--slate-400); }
 
 .ai-input-area { display: flex; gap: 8px; margin-top: auto; }
-.ai-input { flex: 1; background: #161b22; border: 1px solid #30363d; padding: 12px; border-radius: 10px; color: white; font-size: 16px; outline: none; }
+.ai-input { flex: 1; background: #161b22; border: 1px solid #30363d; padding: 10px; border-radius: 10px; color: white; font-size: 16px; outline: none; }
 
 .loading-dots:after { content: '...'; animation: dots 1.5s infinite; }
 @keyframes dots { 0% { content: '.'; } 33% { content: '..'; } 66% { content: '...'; } }
@@ -366,12 +354,12 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                     <div class="card">
                         <i class="fa-solid fa-key"></i>
                         <h3>Kurumsal Mülkiyet</h3>
-                        <p>Kiralık platform bağımlılığına son veriyoruz. Gelişmiş teknolojik altyapımızla sistemin %100 mülk sahibi Matbir oluyor.</p>
+                        <p>Kiralık platform bağımlılığına son veriyoruz. Gelişmiş teknolojik altyapımızla sistemin %100 mülk sahibi Matbir oluyor. Tüm Google Cloud organizasyonu kuruma tescil edilir.</p>
                     </div>
                     <div class="card">
                         <i class="fa-solid fa-shield-halved"></i>
                         <h3>Hizmet Odaklı Güvenlik</h3>
-                        <p>Verileriniz paylaşımlı sunucularda değil, size özel izole edilmiş Google Bulut kalesinde barındırılır.</p>
+                        <p>Verileriniz paylaşımlı sunucularda değil, size özel izole edilmiş Google Bulut kalesinde barındırılır. KVKK tam uyumu ve banka düzeyi şifreleme ile korunur.</p>
                     </div>
                 </div>
                 <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('security')">
@@ -382,7 +370,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
 
         <!-- SLAYT 3: CANLI DERS GÜCÜ -->
         <section class="slide">
-            <h2 class="slide-title">Hibrit Canlı Ders: <span>10.000+ Ölçek</span></h2>
+            <h2 class="slide-title">Hibrit Canlı Ders: <span>10.000+ Sınırsız Ölçek</span></h2>
             <div class="content-grid">
                 <div class="grid-2">
                     <div class="card" style="border-left: 8px solid var(--accent);">
@@ -443,9 +431,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                         <p>Gece yarısı gelen talepleri bile profesyonelce karşılayan, ikna eden ve randevu işleyen kesintisiz bir güçtür.</p>
                     </div>
                 </div>
-                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('agentic')">
-                    <i class="fa-solid fa-sparkles"></i> YAPAY ZEKA GÜCÜNÜ SOR
-                </button>
+                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('agentic')"><i class="fa-solid fa-sparkles"></i> YAPAY ZEKA GÜCÜNÜ SOR</button>
             </div>
         </section>
 
@@ -496,7 +482,6 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                 
                 <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
                     <a href="https://www.avgai.ai" target="_blank" style="color: var(--accent); text-decoration: none; font-size: clamp(20px, 4vw, 36px); font-weight: 600; letter-spacing: 2px;">www.avgai.ai</a>
-                    <a href="mailto:dijital@avgai.ai" style="color: var(--slate-400); text-decoration: none;">dijital@avgai.ai</a>
                 </div>
 
                 <div style="margin-top: 100px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); width: 85%; max-width: 600px; font-size: 12px; color: var(--slate-800); letter-spacing: 2px; font-weight: 800;">
@@ -533,7 +518,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
     </div>
 
     <script>
-        // API ANAHTARI
+        // --- API ANAHTARI VE MODEL YAPILANDIRMASI ---
         const apiKey = "AIzaSyAlsRzfSe0abjgzQKSI0iEePu4nLGzL0Lc"; 
 
         let currentSlide = 0;
@@ -541,7 +526,6 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
         const wrapper = document.getElementById('slidesWrapper');
         const navDots = document.getElementById('navDots');
         const watermark = document.getElementById('globalWatermark');
-        let activeAiType = 'general';
         let chatHistory = [];
 
         // Init Navigation
@@ -556,6 +540,8 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
             currentSlide = index;
             wrapper.style.transform = `translateY(-${currentSlide * 100}vh)`;
             document.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+            if (currentSlide === slides.length - 1) watermark.style.opacity = '0';
+            else watermark.style.opacity = '0.9';
         }
 
         // Scroll & Touch Navigation
@@ -577,7 +563,6 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
         }, { passive: true });
 
         function openAI(type) {
-            activeAiType = type;
             const modal = document.getElementById('aiModal');
             const title = document.getElementById('aiTitle');
             const desc = document.getElementById('aiDesc');
@@ -595,8 +580,10 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
         function clearHistory() { chatHistory = []; document.getElementById('aiHistory').innerHTML = '<div class="chat-bubble bubble-ai">Geçmiş temizlendi. Nasıl yardımcı olabilirim?</div>'; }
 
         async function callGeminiAPI(history, systemPrompt) {
-            // KRİTİK GÜNCELLEME: v1beta endpoint ve en güncel Gemini modeli (gemini-2.5-flash-preview-09-2025)
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+            if (!apiKey) return "Hata: API Anahtarı bulunamadı.";
+            
+            // --- DÜZELTME: Kararlı v1beta endpoint ve Gemini 1.5 Flash modeli ---
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
             
             let delays = [1000, 2000, 4000, 8000];
             
@@ -606,8 +593,8 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ 
-                            contents: history, 
-                            // v1beta sürümünde systemInstruction (camelCase) daha kararlıdır
+                            contents: history.map(h => ({ role: h.role, parts: h.parts })), 
+                            // v1beta sürümünde systemInstruction (camelCase) kullanılır
                             systemInstruction: { parts: [{ text: systemPrompt }] } 
                         })
                     });
