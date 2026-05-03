@@ -81,8 +81,8 @@ body, html {
     .glow-orb { filter: blur(120px); }
 }
 
-.orb-1 { top: -10%; right: -5%; width: 250px; height: 250px; background: var(--accent); }
-.orb-2 { bottom: -10%; left: -5%; width: 200px; height: 200px; background: var(--emerald); }
+.orb-1 { top: -10%; right: -5%; width: 700px; height: 700px; background: var(--accent); }
+.orb-2 { bottom: -10%; left: -5%; width: 600px; height: 600px; background: var(--emerald); }
 
 @media (min-width: 768px) {
     .orb-1 { width: 700px; height: 700px; }
@@ -424,7 +424,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                     <div class="card">
                         <i class="fa-solid fa-robot"></i>
                         <h3>Öğrenci Rehberliği</h3>
-                        <p>Yapay zekamız performans verilerini analiz eder ve kişisel ders rotasını çizer. Otonom başarı rotası sunuyoruz.</p>
+                        <p>Yapay zekamız performans verilerini analiz eder ve kişisel ders rotasını otonom olarak yönetir.</p>
                     </div>
                     <div class="card" style="border-style: dashed; border-color: var(--emerald);">
                         <h3 style="color: var(--emerald);">Satış Otonomisi</h3>
@@ -526,6 +526,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
         const wrapper = document.getElementById('slidesWrapper');
         const navDots = document.getElementById('navDots');
         const watermark = document.getElementById('globalWatermark');
+        let activeAiType = 'general';
         let chatHistory = [];
 
         // Init Navigation
@@ -582,8 +583,8 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
         async function callGeminiAPI(history, systemPrompt) {
             if (!apiKey) return "Hata: API Anahtarı bulunamadı.";
             
-            // --- DÜZELTME: Kararlı v1beta endpoint ve Gemini 1.5 Flash modeli ---
-            const url = \https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;`
+            // --- DÜZELTME: Kararlı v1beta endpoint ve Gemini 2.5 Flash modeli ---
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
             
             let delays = [1000, 2000, 4000, 8000];
             
@@ -593,7 +594,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ 
-                            contents: history.map(h => ({ role: h.role, parts: h.parts })), 
+                            contents: history, 
                             // v1beta sürümünde systemInstruction (camelCase) kullanılır
                             systemInstruction: { parts: [{ text: systemPrompt }] } 
                         })
@@ -602,7 +603,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                     const data = await response.json();
                     
                     if (!response.ok) {
-                        return `Hata: ${response.status}. ${data.error?.message || "İstek reddedildi."}`;
+                        return `Teknik Hata: ${response.status}. ${data.error?.message || "Bağlantı reddedildi."}`;
                     }
                     
                     return data.candidates?.[0]?.content?.parts?.[0]?.text || "Yanıt alınamadı.";
