@@ -420,12 +420,8 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                     <div class="card">
                         <i class="fa-brands fa-meta" style="color: #0668E1;"></i>
                         <h3>Meta (Retargeting)</h3>
-                        <p>Google'dan gelen veliyi sosyal medyada takip ederek marka güvenini görsel bir yolculuğa çıkarıyoruz.</p>
+                        <p>Google'dan gelen veliyi sosyal medyada takip ederek marka güvenini perçinliyoruz.</p>
                     </div>
-                </div>
-                <div class="card" style="padding: 12px; display: flex; flex-direction: row; align-items: center; gap: 12px; border-bottom: 4px solid var(--emerald);">
-                    <i class="fa-solid fa-chart-line" style="color: var(--emerald); margin-bottom: 0;"></i>
-                    <p style="margin-bottom: 0; font-weight: 700; color: var(--white); font-size: 14px;">Gelişmiş veri paylaşımı ile reklam maliyetlerini %30 optimize ediyoruz.</p>
                 </div>
                 <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('marketing')">
                     <i class="fa-solid fa-sparkles"></i> REKLAM STRATEJİSİNİ SOR
@@ -441,7 +437,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                     <div class="card">
                         <i class="fa-solid fa-robot"></i>
                         <h3>Öğrenci Rehberliği</h3>
-                        <p>Yapay zekamız performans verilerini analiz eder ve kişisel ders rotasını çizer. Otonom başarı rotası sunuyoruz.</p>
+                        <p>Yapay zekamız performans verilerini analiz eder ve kişisel ders rotasını otonom olarak yönetir.</p>
                     </div>
                     <div class="card" style="border-style: dashed; border-color: var(--emerald);">
                         <h3 style="color: var(--emerald);">Satış Otonomisi</h3>
@@ -538,15 +534,13 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
     </div>
 
     <script>
-        // API ANAHTARI
+        // --- API ANAHTARI ENTEGRASYONU ---
         const apiKey = "AIzaSyAlsRzfSe0abjgzQKSI0iEePu4nLGzL0Lc"; 
 
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         const wrapper = document.getElementById('slidesWrapper');
         const navDots = document.getElementById('navDots');
-        const watermark = document.getElementById('globalWatermark');
-        let activeAiType = 'general';
         let chatHistory = [];
 
         // Init Navigation
@@ -600,8 +594,10 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
         function clearHistory() { chatHistory = []; document.getElementById('aiHistory').innerHTML = '<div class="chat-bubble bubble-ai">Geçmiş temizlendi. Nasıl yardımcı olabilirim?</div>'; }
 
         async function callGeminiAPI(history, systemPrompt) {
-            // URL: v1beta endpoint (En esnek ve kararlı sürüm)
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+            if (!apiKey) return "Hata: API Anahtarı bulunamadı.";
+            
+            // --- KRİTİK DÜZELTME: Kararlı v1 endpoint kullanımı ---
+            const url = `https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
             
             let delays = [1000, 2000, 4000, 8000];
             
@@ -612,7 +608,8 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ 
                             contents: history, 
-                            systemInstruction: { parts: [{ text: systemPrompt }] } 
+                            // --- KRİTİK DÜZELTME: v1 sürümü system_instruction (alt tireli) bekler ---
+                            system_instruction: { parts: [{ text: systemPrompt }] } 
                         })
                     });
 
