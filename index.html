@@ -81,8 +81,13 @@ body, html {
     .glow-orb { filter: blur(120px); }
 }
 
-.orb-1 { top: -10%; right: -5%; width: 700px; height: 700px; background: var(--accent); }
-.orb-2 { bottom: -10%; left: -5%; width: 600px; height: 600px; background: var(--emerald); }
+.orb-1 { top: -10%; right: -5%; width: 250px; height: 250px; background: var(--accent); }
+.orb-2 { bottom: -10%; left: -5%; width: 200px; height: 200px; background: var(--emerald); }
+
+@media (min-width: 768px) {
+    .orb-1 { width: 700px; height: 700px; }
+    .orb-2 { width: 600px; height: 600px; }
+}
 
 @keyframes pulse {
     0% { transform: scale(1); opacity: 0.15; }
@@ -143,15 +148,9 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
     flex-direction: column;
 }
 
-.card h3 { color: var(--accent); font-size: 16px; margin-bottom: 8px; }
-.card p { color: var(--slate-400); font-size: 13px; line-height: 1.5; }
-.card i { font-size: 22px; color: var(--accent); margin-bottom: 10px; display: block; }
-
-@media (min-width: 768px) {
-    .card h3 { font-size: 20px; }
-    .card p { font-size: 16px; }
-    .card i { font-size: 28px; }
-}
+.card h3 { color: var(--accent); font-size: 20px; margin-bottom: 8px; }
+.card p { color: var(--slate-400); font-size: 16px; line-height: 1.5; }
+.card i { font-size: 28px; color: var(--accent); margin-bottom: 10px; display: block; }
 
 /* 6. AVG AI İMZASI (SOL ALT) */
 .watermark-signature {
@@ -184,11 +183,11 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
 .ai-ask-btn {
     background: linear-gradient(135deg, var(--accent), var(--emerald));
     color: white;
-    padding: 10px 20px;
+    padding: 14px 32px;
     border-radius: 100px;
     border: none;
     font-weight: 700;
-    font-size: 13px;
+    font-size: 16px;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
@@ -197,10 +196,6 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
     transition: all 0.3s ease;
     margin-top: 15px;
     white-space: nowrap;
-}
-
-@media (min-width: 768px) {
-    .ai-ask-btn { padding: 14px 32px; font-size: 16px; gap: 12px; }
 }
 
 .modal-overlay {
@@ -254,7 +249,7 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
 .bubble-ai { background: rgba(66, 133, 244, 0.1); border: 1px solid rgba(66, 133, 244, 0.2); align-self: flex-start; color: var(--slate-400); }
 
 .ai-input-area { display: flex; gap: 8px; margin-top: auto; }
-.ai-input { flex: 1; background: #161b22; border: 1px solid #30363d; padding: 10px; border-radius: 10px; color: white; font-size: 16px; outline: none; }
+.ai-input { flex: 1; background: #161b22; border: 1px solid #30363d; padding: 12px; border-radius: 10px; color: white; font-size: 16px; outline: none; }
 
 .loading-dots:after { content: '...'; animation: dots 1.5s infinite; }
 @keyframes dots { 0% { content: '.'; } 33% { content: '..'; } 66% { content: '...'; } }
@@ -289,8 +284,8 @@ h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; margi
 /* 9. TABLO */
 .table-container { width: 100%; overflow-x: auto; }
 table { width: 100%; border-collapse: collapse; margin-top: 5px; min-width: 450px; }
-th { text-align: left; padding: 10px; color: var(--accent); border-bottom: 2px solid var(--slate-800); font-family: 'Outfit'; font-size: 11px; }
-td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; color: var(--slate-400); }
+th { text-align: left; padding: 10px; color: var(--accent); border-bottom: 2px solid var(--slate-800); font-family: 'Outfit'; font-size: 12px; }
+td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 14px; color: var(--slate-400); }
 
     </style>
 </head>
@@ -316,123 +311,64 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                 </div>
                 <h1 style="font-size: clamp(40px, 10vw, 110px); letter-spacing: -3px; line-height: 0.85;">MATBİR <span>360°</span></h1>
                 <p style="font-size: clamp(16px, 3vw, 32px); font-weight: 300; letter-spacing: 8px; color: var(--slate-400); margin-top: 10px; margin-bottom: 35px;">EĞİTİM EKOSİSTEMİ</p>
-                
                 <div class="grid-3">
-                    <div class="card">
-                        <i class="fa-solid fa-network-wired"></i>
-                        <h3>AKILLI BAYİ</h3>
-                        <p>Merkezi Otonom Denetim</p>
-                    </div>
-                    <div class="card">
-                        <i class="fa-solid fa-tower-broadcast"></i>
-                        <h3>HİBRİT EĞİTİM</h3>
-                        <p>10k+ Sınırsız Canlı Yayın</p>
-                    </div>
-                    <div class="card">
-                        <i class="fa-solid fa-gauge-high"></i>
-                        <h3>OTONOM YÖNETİM</h3>
-                        <p>Agentic AI & RAG Gücü</p>
-                    </div>
+                    <div class="card"><i class="fa-solid fa-network-wired"></i><h3>AKILLI BAYİ</h3><p>Merkezi Otonom Denetim</p></div>
+                    <div class="card"><i class="fa-solid fa-tower-broadcast"></i><h3>HİBRİT EĞİTİM</h3><p>10k+ Sınırsız Canlı Yayın</p></div>
+                    <div class="card"><i class="fa-solid fa-gauge-high"></i><h3>OTONOM YÖNETİM</h3><p>Agentic AI & RAG Gücü</p></div>
                 </div>
-
-                <button class="ai-ask-btn" onclick="openAI('general')">
-                    <i class="fa-solid fa-sparkles"></i> VİZYONU YAPAY ZEKAYA SOR
-                </button>
+                <button class="ai-ask-btn" onclick="openAI('general')"><i class="fa-solid fa-sparkles"></i> VİZYONU YAPAY ZEKAYA SOR</button>
             </div>
         </section>
 
-        <!-- SLAYT 2: VERİ EGEMENLİĞİ -->
+        <!-- SLAYT 2 -->
         <section class="slide">
             <h2 class="slide-title">Stratejik <span>Veri Egemenliği</span></h2>
             <div class="content-grid">
                 <div class="grid-2">
-                    <div class="card">
-                        <i class="fa-solid fa-key"></i>
-                        <h3>Kurumsal Mülkiyet</h3>
-                        <p>Kiralık platform bağımlılığına son veriyoruz. Gelişmiş teknolojik altyapımızla sistemin %100 mülk sahibi Matbir oluyor. Tüm Google Cloud organizasyonu kuruma tescil edilir.</p>
-                    </div>
-                    <div class="card">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <h3>Hizmet Odaklı Güvenlik</h3>
-                        <p>Verileriniz paylaşımlı sunucularda değil, size özel izole edilmiş Google Bulut kalesinde barındırılır. KVKK tam uyumu ve banka düzeyi şifreleme ile korunur.</p>
-                    </div>
+                    <div class="card"><h3>Kurumsal Mülkiyet</h3><p>Kiralık platform bağımlılığına son veriyoruz. Sistemin %100 mülk sahibi Matbir oluyor.</p></div>
+                    <div class="card"><h3>Hizmet Odaklı Güvenlik</h3><p>Verileriniz paylaşımlı sunucularda değil, size özel izole edilmiş Google Bulut kalesinde barındırılır.</p></div>
                 </div>
-                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('security')">
-                    <i class="fa-solid fa-sparkles"></i> GÜVENLİK ALTYAPISINI SOR
-                </button>
+                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('security')"><i class="fa-solid fa-sparkles"></i> GÜVENLİK ALTYAPISINI SOR</button>
             </div>
         </section>
 
-        <!-- SLAYT 3: CANLI DERS GÜCÜ -->
+        <!-- SLAYT 3 -->
         <section class="slide">
-            <h2 class="slide-title">Hibrit Canlı Ders: <span>10.000+ Sınırsız Ölçek</span></h2>
+            <h2 class="slide-title">Hibrit Canlı Ders: <span>10.000+ Ölçek</span></h2>
             <div class="content-grid">
                 <div class="grid-2">
-                    <div class="card" style="border-left: 8px solid var(--accent);">
-                        <i class="fa-solid fa-users-viewfinder"></i>
-                        <h3 style="font-size: 24px; color: var(--white);">Devasa Katılım Gücü</h3>
-                        <p>HD yayını on binlerce öğrenciye sıfır gecikme (Low Latency) ile iletiyoruz. Google altyapısı sınırsız ölçek sunar.</p>
-                    </div>
-                    <div class="card">
-                        <i class="fa-solid fa-cloud-arrow-up"></i>
-                        <h3>Otonom Arşivleme</h3>
-                        <p>Dersler bittiği an manuel müdahale gerekmeden otomatik olarak her öğrencinin Drive kütüphanesine kaydedilir.</p>
-                    </div>
+                    <div class="card" style="border-left: 8px solid var(--accent);"><h3>Devasa Katılım Gücü</h3><p>HD yayını on binlerce öğrenciye sıfır gecikme ile iletiyoruz.</p></div>
+                    <div class="card"><h3>Otonom Arşivleme</h3><p>Dersler bittiği an manuel müdahale gerekmeden otomatik olarak Drive kütüphanesine kaydedilir.</p></div>
                 </div>
-                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('live_class')">
-                    <i class="fa-solid fa-sparkles"></i> CANLI DERS TEKNOLOJİSİ SOR
-                </button>
+                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('live_class')"><i class="fa-solid fa-sparkles"></i> CANLI DERS TEKNOLOJİSİ SOR</button>
             </div>
         </section>
 
-        <!-- SLAYT 4: ADS & META SİNERJİSİ -->
+        <!-- SLAYT 4 -->
         <section class="slide">
             <h2 class="slide-title">Ads & Meta: <span>360° Sinerji</span></h2>
             <div class="content-grid">
                 <div class="grid-2">
-                    <div class="card">
-                        <i class="fa-brands fa-google" style="color: #4285F4;"></i>
-                        <h3>Google Ads</h3>
-                        <p>Kurs aramalarında velinin "niyetini" yakalıyor, kayıt potansiyeli en yüksek kitleyi anında sitemize çekiyoruz.</p>
-                    </div>
-                    <div class="card">
-                        <i class="fa-brands fa-meta" style="color: #0668E1;"></i>
-                        <h3>Meta (Retargeting)</h3>
-                        <p>Google'dan gelen veliyi sosyal medyada takip ederek marka güvenini görsel bir yolculuğa çıkarıyoruz.</p>
-                    </div>
+                    <div class="card"><i class="fa-brands fa-google" style="color: #4285F4;"></i><h3>Google Ads</h3><p>LGS, YKS ve Kurs aramalarında velinin "niyetini" yakalıyor, kayıt potansiyeli en yüksek kitleyi çekiyoruz.</p></div>
+                    <div class="card"><i class="fa-brands fa-meta" style="color: #0668E1;"></i><h3>Meta (Retargeting)</h3><p>Google'dan gelen veliyi sosyal medyada takip ederek marka güvenini görsel bir yolculuğa dönüştürüyoruz.</p></div>
                 </div>
-                <div class="card" style="padding: 12px; display: flex; flex-direction: row; align-items: center; gap: 12px; border-bottom: 4px solid var(--emerald);">
-                    <i class="fa-solid fa-chart-line" style="color: var(--emerald); margin-bottom: 0;"></i>
-                    <p style="margin-bottom: 0; font-weight: 700; color: var(--white); font-size: 14px;">Gelişmiş veri paylaşımı ile reklam maliyetlerini %30 optimize ediyoruz.</p>
-                </div>
-                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('marketing')">
-                    <i class="fa-solid fa-sparkles"></i> REKLAM STRATEJİSİNİ SOR
-                </button>
+                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('marketing')"><i class="fa-solid fa-sparkles"></i> REKLAM STRATEJİSİNİ SOR</button>
             </div>
         </section>
 
-        <!-- SLAYT 5: AGENTIC AI -->
+        <!-- SLAYT 5 -->
         <section class="slide">
             <h2 class="slide-title">Agentic AI: <span>Otonom Başarı Rotası</span></h2>
             <div class="content-grid">
                 <div class="grid-2">
-                    <div class="card">
-                        <i class="fa-solid fa-robot"></i>
-                        <h3>Öğrenci Rehberliği</h3>
-                        <p>Yapay zekamız performans verilerini analiz eder ve kişisel ders rotasını otonom olarak yönetir. Otonom başarı rotası sunuyoruz.</p>
-                    </div>
-                    <div class="card" style="border-style: dashed; border-color: var(--emerald);">
-                        <h3 style="color: var(--emerald);">Satış Otonomisi</h3>
-                        <p>Gece yarısı gelen talepleri bile profesyonelce karşılayan, ikna eden ve randevu işleyen kesintisiz bir güçtür.</p>
-                    </div>
+                    <div class="card"><h3>Öğrenci Rehberliği</h3><p>Yapay zekamız performans verilerini analiz eder ve kişisel ders rotasını otonom olarak yönetir.</p></div>
+                    <div class="card" style="border-style: dashed; border-color: var(--emerald);"><h3>Satış Otonomisi</h3><p>Gece yarısı gelen talepleri bile profesyonelce karşılayan, ikna eden ve randevu işleyen kesintisiz bir güçtür.</p></div>
                 </div>
-                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('agentic')">
-                    <i class="fa-solid fa-sparkles"></i> YAPAY ZEKA GÜCÜNÜ SOR
-                </button>
+                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('agentic')"><i class="fa-solid fa-sparkles"></i> VELİ GÖRÜŞME SİMÜLATÖRÜNÜ DENE</button>
             </div>
         </section>
 
-        <!-- SLAYT 6: SİSTEM ANALİZİ -->
+        <!-- SLAYT 6 -->
         <section class="slide">
             <h2 class="slide-title">Sistem <span>Teknik Analizi</span></h2>
             <div class="content-grid">
@@ -440,82 +376,57 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                     <div class="card" style="padding: 10px;">
                         <table>
                             <thead>
-                                <tr>
-                                    <th style="color: var(--accent);">METRİK ALANI</th>
-                                    <th>GELENEKSEL MODEL</th>
-                                    <th style="color: var(--emerald);">MATBİR 360° GÜCÜ</th>
-                                </tr>
+                                <tr><th>METRİK ALANI</th><th>GELENEKSEL</th><th style="color: var(--emerald);">MATBİR 360°</th></tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td><strong>Canlı Kapasite</strong></td>
-                                    <td>Sınırlı (Yavaş)</td>
-                                    <td style="color: var(--emerald); font-weight: 700;">10.000+ Sınırsız</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Yapay Zeka</strong></td>
-                                    <td>Statik / Yok</td>
-                                    <td style="color: var(--emerald); font-weight: 700;">Agentic (Otonom)</td>
-                                </tr>
-                                <tr>
-                                    <td><strong>Veri Mülkiyeti</strong></td>
-                                    <td>Kiralık</td>
-                                    <td style="color: var(--emerald); font-weight: 700;">Tapulu / Özgür</td>
-                                </tr>
+                                <tr><td>Kapasite</td><td>Sınırlı</td><td style="color: var(--emerald); font-weight: 700;">10.000+ Sınırsız</td></tr>
+                                <tr><td>Yapay Zeka</td><td>Statik</td><td style="color: var(--emerald); font-weight: 700;">Agentic (Otonom)</td></tr>
+                                <tr><td>Mülkiyet</td><td>Kiralık</td><td style="color: var(--emerald); font-weight: 700;">Tapulu / Özgür</td></tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
-                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('analytics')">
-                    <i class="fa-solid fa-sparkles"></i> ANALİZ RAPORUNU SOR
-                </button>
+                <button class="ai-ask-btn" style="width: fit-content; margin: 20px auto 0;" onclick="openAI('analytics')"><i class="fa-solid fa-sparkles"></i> ANALİZ RAPORUNU SOR</button>
             </div>
         </section>
 
-        <!-- SLAYT 7: FİNAL -->
+        <!-- SLAYT 7 -->
         <section class="slide" style="background: linear-gradient(180deg, #020617 0%, #0f172a 100%);">
             <div style="text-align: center; z-index: 10; display: flex; flex-direction: column; align-items: center; width: 100%;">
-                <h2 style="font-size: clamp(24px, 5vw, 42px); font-weight: 300; letter-spacing: 5px; color: var(--white); margin-bottom: 40px;">GELECEĞİN EĞİTİM MİMARİSİ</h2>
-                
-                <div style="display: flex; flex-direction: column; gap: 20px; align-items: center;">
-                    <a href="https://www.avgai.ai" target="_blank" style="color: var(--accent); text-decoration: none; font-size: clamp(20px, 4vw, 36px); font-weight: 600; letter-spacing: 2px;">www.avgai.ai</a>
+                <h2 style="font-size: clamp(20px, 5vw, 38px); font-weight: 300; letter-spacing: 5px; color: var(--white); margin-bottom: 30px;">GELECEĞİN EĞİTİM MİMARİSİ</h2>
+                <div style="display: flex; flex-direction: column; gap: 15px; align-items: center;">
+                    <a href="https://www.avgai.ai" target="_blank" style="color: var(--accent); text-decoration: none; font-size: clamp(18px, 4vw, 32px); font-weight: 600; letter-spacing: 1px;">www.avgai.ai</a>
                 </div>
-
-                <div style="margin-top: 100px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05); width: 85%; max-width: 600px; font-size: 12px; color: var(--slate-800); letter-spacing: 2px; font-weight: 800;">
+                <div style="margin-top: 60px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.05); width: 85%; max-width: 600px; font-size: 10px; color: var(--slate-800); letter-spacing: 2px; font-weight: 800;">
                     AVG AI TARAFINDAN HAZIRLANMIŞTIR | 2026
                 </div>
             </div>
         </section>
     </div>
 
-    <!-- NAVIGATION DOTS -->
     <div class="nav-dots" id="navDots"></div>
 
     <!-- AI MODAL -->
     <div class="modal-overlay" id="aiModal">
         <div class="modal-content">
-            <span style="position: absolute; top: 15px; right: 20px; font-size: 28px; color: var(--slate-400); cursor: pointer; z-index: 10;" onclick="closeAI()"><i class="fa-solid fa-xmark"></i></span>
-            <h2 id="aiTitle" style="color: var(--accent); margin-bottom: 5px; font-family: 'Outfit'; font-size: 20px;">✨ Akıllı Altyapı Asistanı</h2>
-            <p id="aiDesc" style="color: var(--slate-400); margin-bottom: 15px; font-size: 13px;">Gelişmiş teknolojik altyapımızla hizmetinizdeyiz.</p>
-            
+            <span style="position: absolute; top: 10px; right: 15px; font-size: 24px; color: var(--slate-400); cursor: pointer; z-index: 10;" onclick="closeAI()"><i class="fa-solid fa-xmark"></i></span>
+            <h2 id="aiTitle" style="color: var(--accent); margin-bottom: 5px; font-family: 'Outfit'; font-size: 18px;">✨ Akıllı Altyapı Asistanı</h2>
             <div id="aiHistory" class="ai-history">
                 <div class="chat-bubble bubble-ai">Merhaba! Ben Matbir 360° teknoloji danışmanıyım. Size nasıl yardımcı olabilirim?</div>
             </div>
-
             <div class="ai-input-area">
                 <input type="text" id="aiInput" class="ai-input" placeholder="Bir soru yazın...">
-                <button class="ai-ask-btn" onclick="runAI()" style="margin-top: 0; padding: 10px 25px;">Sor</button>
+                <button class="ai-ask-btn" onclick="runAI()" style="margin-top: 0; padding: 8px 16px;">Sor</button>
             </div>
-            
-            <div style="display: flex; justify-content: flex-end; margin-top: 15px; gap: 10px;">
-                <button class="ai-ask-btn" style="background: #334155; box-shadow: none; font-size: 11px; padding: 8px 16px;" onclick="clearHistory()">Temizle</button>
-                <button class="ai-ask-btn" style="background: var(--slate-800); box-shadow: none; font-size: 11px; padding: 8px 16px;" onclick="closeAI()">Kapat</button>
+            <div style="display: flex; justify-content: flex-end; margin-top: 10px; gap: 8px;">
+                <button class="ai-ask-btn" style="background: #334155; box-shadow: none; font-size: 10px;" onclick="clearHistory()">Temizle</button>
+                <button class="ai-ask-btn" style="background: var(--slate-800); box-shadow: none; font-size: 10px;" onclick="closeAI()">Kapat</button>
             </div>
         </div>
     </div>
 
     <script>
-        // --- API ANAHTARI VE MODEL YAPILANDIRMASI ---
+        // --- API ANAHTARI VE KARARLI MODEL YAPILANDIRMASI ---
         const apiKey = "AIzaSyAlsRzfSe0abjgzQKSI0iEePu4nLGzL0Lc"; 
 
         let currentSlide = 0;
@@ -523,10 +434,8 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
         const wrapper = document.getElementById('slidesWrapper');
         const navDots = document.getElementById('navDots');
         const watermark = document.getElementById('globalWatermark');
-        let activeAiType = 'general';
         let chatHistory = [];
 
-        // Init Navigation
         slides.forEach((_, i) => {
             const dot = document.createElement('div');
             dot.className = `dot ${i === 0 ? 'active' : ''}`;
@@ -542,8 +451,6 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
             else watermark.style.opacity = '0.9';
         }
 
-        // Scroll & Touch Navigation
-        let isScrolling = false;
         window.addEventListener('wheel', (e) => {
             if (isScrolling) return;
             isScrolling = true;
@@ -552,6 +459,7 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
             setTimeout(() => isScrolling = false, 1000);
         }, { passive: true });
 
+        // Touch Navigation
         let touchStartY = 0;
         window.addEventListener('touchstart', e => { touchStartY = e.touches[0].clientY; }, { passive: true });
         window.addEventListener('touchend', e => {
@@ -560,29 +468,15 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
             if (touchEndY - touchStartY > 50 && currentSlide > 0) goToSlide(currentSlide - 1);
         }, { passive: true });
 
-        function openAI(type) {
-            activeAiType = type;
-            const modal = document.getElementById('aiModal');
-            const title = document.getElementById('aiTitle');
-            const desc = document.getElementById('aiDesc');
-            modal.style.display = 'flex';
-            
-            if (type === 'security') { title.innerText = "✨ Güvenlik ve Veri Uzmanı"; desc.innerText = "Veri mülkiyeti ve Google Cloud güvenliğini sorun."; }
-            else if (type === 'live_class') { title.innerText = "✨ Canlı Ders Uzmanı"; desc.innerText = "10.000+ kapasite ve otonom arşivi sorun."; }
-            else if (type === 'marketing') { title.innerText = "✨ Pazarlama Stratejisti"; desc.innerText = "Google & Meta reklam sinerjisini sorun."; }
-            else if (type === 'agentic') { title.innerText = "✨ Agentic AI Uzmanı"; desc.innerText = "Otonom rehberlik süreçlerini sorun."; }
-            else if (type === 'analytics') { title.innerText = "✨ Teknik Analiz Masası"; desc.innerText = "Maliyet ve performans metriklerini sorun."; }
-            else { title.innerText = "✨ Matbir Baş Danışmanı"; desc.innerText = "Genel teknoloji mimarisini sorun."; }
-        }
+        let isScrolling = false;
 
+        function openAI(type) { document.getElementById('aiModal').style.display = 'flex'; }
         function closeAI() { document.getElementById('aiModal').style.display = 'none'; }
-        function clearHistory() { chatHistory = []; document.getElementById('aiHistory').innerHTML = '<div class="chat-bubble bubble-ai">Geçmiş temizlendi. Nasıl yardımcı olabilirim?</div>'; }
+        function clearHistory() { chatHistory = []; document.getElementById('aiHistory').innerHTML = '<div class="chat-bubble bubble-ai">Geçmiş temizlendi.</div>'; }
 
         async function callGeminiAPI(history, systemPrompt) {
-            if (!apiKey) return "Hata: API Anahtarı bulunamadı.";
-            
-            // --- DÜZELTME: Kararlı v1beta endpoint ve Gemini 1.5 Flash modeli ---
-            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+            // KRİTİK GÜNCELLEME: v1beta sürümü ve -latest etiketi ile en kararlı model bağlantısı
+            const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
             
             let delays = [1000, 2000, 4000, 8000];
             
@@ -592,20 +486,19 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({ 
-                            contents: history.map(h => ({ role: h.role, parts: h.parts })), 
-                            // v1beta sürümünde systemInstruction (camelCase) kullanılır
+                            contents: history, 
+                            // v1beta'da camelCase (systemInstruction) daha sorunsuz çalışır
                             systemInstruction: { parts: [{ text: systemPrompt }] } 
                         })
                     });
 
-                    const data = await response.json();
-                    
                     if (!response.ok) {
-                        return `Hata: ${response.status}. ${data.error?.message || "İstek reddedildi."}`;
+                        const errorData = await response.json();
+                        throw new Error(errorData.error?.message || `HTTP ${response.status}`);
                     }
                     
-                    return data.candidates?.[0]?.content?.parts?.[0]?.text || "Yanıt alınamadı.";
-
+                    const data = await response.json();
+                    return data.candidates?.[0]?.content?.parts?.[0]?.text || "Yanıt boş döndü.";
                 } catch (error) {
                     if (i === delays.length - 1) return `Bağlantı hatası: ${error.message}. Lütfen internetinizi kontrol edin.`;
                     await new Promise(r => setTimeout(r, delays[i]));
@@ -629,8 +522,8 @@ td { padding: 10px; border-bottom: 1px solid var(--slate-800); font-size: 12px; 
 
             chatHistory.push({ role: 'user', parts: [{ text: userText }] });
 
-            let systemPrompt = `Sen Matbir 360° Eğitim Ekosistemi projesinin resmi danışmanısın. Yanıtlarında profesyonel, vizyoner ve hizmet odaklı bir dil kullan. Cümlelerine 'Gelişmiş teknolojik altyapımızla sizlere hizmet vermekteyiz' vizyonuyla yaklaş. Matbir'in %100 teknolojik mülkiyetine ve 10.000+ canlı ders kapasitesine vurgu yap. Her yanıtın sonuna mutlaka: "--- Bu proje AVG AI tarafından hazırlanmıştır." ekle.`;
-
+            const systemPrompt = `Sen Matbir 360° Eğitim Ekosistemi projesinin resmi danışmanısın. Profesyonel, vizyoner ve hizmet odaklı bir dil kullan. Matbir'in teknolojik mülkiyetine ve 10.000+ kapasitesine vurgu yap. Yanıtların sonuna mutlaka: "--- Bu proje AVG AI tarafından hazırlanmıştır." ekle.`;
+            
             const aiResponse = await callGeminiAPI(chatHistory, systemPrompt);
             loading.remove();
             
